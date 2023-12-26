@@ -15,8 +15,7 @@ class Blackjack(object):
         self.computer_card = computer_card1 + computer_card2
         self.player_card = player_card1 + player_card2
         print(f'Your card: {player_card1},{player_card2} \nYour competitor card: {computer_card1}')
-        answer = input('Hit or Stand?:')
-        if answer == 'Hit':
+        if (answer := input('Hit or Stand?:')) == 'Hit':
             self.player_card  += random.randint(1, 11)
             print(self.player_card)
         else:
