@@ -1,4 +1,4 @@
-import random
+import secrets
 
 class Blackjack(object):
     def __init__(self):
@@ -8,16 +8,16 @@ class Blackjack(object):
 
 
     def game_card(self):
-        player_card1 = random.randint(1, 11)
-        player_card2 = random.randint(1, 11)
-        computer_card1 = random.randint(1, 11)
-        computer_card2 = random.randint(1, 11)
+        player_card1 = secrets.SystemRandom().randint(1, 11)
+        player_card2 = secrets.SystemRandom().randint(1, 11)
+        computer_card1 = secrets.SystemRandom().randint(1, 11)
+        computer_card2 = secrets.SystemRandom().randint(1, 11)
         self.computer_card = computer_card1 + computer_card2
         self.player_card = player_card1 + player_card2
         print(f'Your card: {player_card1},{player_card2} \nYour competitor card: {computer_card1}')
         answer = input('Hit or Stand?:')
         if answer == 'Hit':
-            self.player_card  += random.randint(1, 11)
+            self.player_card  += secrets.SystemRandom().randint(1, 11)
             print(self.player_card)
         else:
             print(self.player_card)
